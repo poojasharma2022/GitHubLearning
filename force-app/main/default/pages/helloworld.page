@@ -1,0 +1,16 @@
+<apex:page >
+    <h1>hello everyone</h1>
+    <apex:pageblock title="A block title">
+        <apex:pageblocksection title="A section title">
+          
+           
+                
+                  I am three components deep!
+            
+              <apex:pageblocksection title="A another section title">
+                  
+                  A another section title
+              </apex:pageblocksection>
+            </apex:pageblocksection>
+    </apex:pageblock>
+</apex:page>

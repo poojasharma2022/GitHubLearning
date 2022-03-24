@@ -1,0 +1,11 @@
+trigger AccountDeletion_updated on Account (before delete) {
+   //****** updated from eclipse *****
+    // Prevent the deletion of accounts if they have related contacts.
+    for (Account a : [SELECT Id FROM Account
+                     WHERE Id IN (SELECT AccountId FROM Opportunity) AND
+                     Id IN :Trigger.old]) {
+        Trigger.oldMap.get(a.Id).addError(
+            'Cannot delete account with related opportunities.');
+    }
+    
+}

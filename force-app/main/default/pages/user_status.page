@@ -1,0 +1,16 @@
+<apex:page >
+    <apex:pageBlock title="user status">
+        <apex:pageBlockSection columns="1">
+            {!$user.firstname}   {!$user.lastname}
+            {! if ($user.isactive,'active','inactive')}
+           {!$user.firstname & '       '& $user.lastname}
+            <p>today date is {!today() } </p>
+            <p> next it will be {!today()+7} </p> 
+            <p> lets find maximum number {!max(8,5,3)} </p>
+            <p> thw square root is {!sqrt(49)}</p>
+            <p> {!contains('salesforce.com', 'force.com')}</p>
+            <p> {! if(contains('salesforce.com','force.com'),'yes','no')} </p>
+            <p> {! if(day(today())<15, 'before 15','after 15')} </p>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

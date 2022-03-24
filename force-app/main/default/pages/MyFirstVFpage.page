@@ -1,0 +1,14 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations Pooja</h1>
+  <table border="1">
+  <tr>
+  <td>
+  Name</td>
+  <td> Age
+  </td>
+  </tr>
+  </table>
+  This is your new Page
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

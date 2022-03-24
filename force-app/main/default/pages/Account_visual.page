@@ -1,0 +1,13 @@
+<apex:page controller="account_detail" tabStyle="account">
+  
+   
+        <apex:pageblock title="{!account.name}">
+        <apex:pageblocktable value="{!account}" var="account">
+            <apex:column value="{!account.name}"/>
+            <apex:column value="{!account.phone}"/>
+            <apex:column value="{!account.stage__c}"/>
+        </apex:pageblocktable>
+            
+    </apex:pageblock>
+   
+</apex:page>

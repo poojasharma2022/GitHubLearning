@@ -1,0 +1,13 @@
+<aura:component >
+    <aura:registerEvent name="countryeventATTR" type="c:Ladnun_TestApplicationEvent"/>
+    <b>This is a Publisher Component</b>
+    <lightning:select aura:id="selectID" name="select" label="Please select a country" onchange="{! c.onChange }">
+        <option value="">choose one...</option>
+        <option value="India">India</option>
+        <option value="China">China</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+        
+    </lightning:select> 
+	
+</aura:component>

@@ -1,0 +1,22 @@
+<aura:component controller = 'mycontactcontroller' implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <!-- Handle component initialization in a client-side controller -->
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    
+    <aura:attribute name ="contact" type ="contact"/>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="totalcount" type="Integer"/>
+    Total count :{!v.totalcount}
+    <aura:iteration items="{!v.contact}" var="a">
+        
+       Name:{!a.Id}
+        
+        
+    </aura:iteration>
+    
+    
+    
+    
+        	
+</aura:component>

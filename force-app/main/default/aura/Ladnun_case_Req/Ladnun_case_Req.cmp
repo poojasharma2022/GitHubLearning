@@ -1,0 +1,36 @@
+<aura:component controller="case_create" implements="flexipage:availableForRecordHome,force:hasRecordId,force:appHostable">
+    <aura:attribute name="flag" type="Boolean" default="true" />
+    <aura:attribute name="flagnew" type="Boolean" default="false" />
+    <aura:attribute name="flagnewone" type="Boolean" default="false" />
+    <aura:attribute name="flagsecond" type="Boolean" default="false" />
+    <aura:attribute name = "selectedType" type = "String" />
+    <aura:attribute name = "recordId" type="String"/>
+     	<aura:if isTrue="{!v.flag}">
+    		<lightning:select aura:id="selectID" name="select" label="Choose Request Type" onchange="{! c.onChange }">
+        	<option value="">choose one...</option>
+        	<option value="Merge Relationship">Merge Relationship</option>
+        	<option value="Update Account">Update Account</option>
+        	<option value="Transfer Account">Transfer Account</option>
+        	<option value="Data Loads">Data Loads</option>
+        	</lightning:select> 
+    		<br/> <b>Merge Relationship</b><br/>Request to merge duplicate relationship records.
+            <br/> <b>Update Account</b><br/>Request to merge duplicate relationship records.
+            <br/> <b>Transfer Account</b><br/>Request to merge duplicate relationship records.
+     		<br/> <b>Data Loads</b><br/> Request to merge duplicate relationship records.	
+         </aura:if> 
+    	<aura:if isTrue="{!v.flagnew}">
+         	<b> Step 2:  This will create a {!v.selectedType} case.Do you want to proceed with case creation? 
+         	<lightning:button name="No" label="No" onclick="{!c.backclick}"/> 
+        	<lightning:button name="Yes" label="Yes" onclick="{!c.onclick}"/></b>
+		</aura:if>
+    	<aura:if isTrue="{!v.flagnewone}">
+         	<lightning:button name="Cancel Request" label="Cancel Request" onclick="{!c.cancelrequest}"/> 
+        	<lightning:button name="Next" label="Next" onclick="{!c.update}"/> <br/>
+        	<b>Please complete all the required fields,you can see them by clicking on the pencil icon.
+            Click on 'Save' to save the record, and then click on "Next".</b>
+        </aura:if>
+      <aura:if isTrue="{!v.flagsecond}">
+        	<lightning:button name="Submit Request" label="Submit Request" onclick="{!c.submitrequest}"/>
+      </aura:if>
+    
+</aura:component>

@@ -1,0 +1,54 @@
+<aura:component controller="new_createcontact" implements="flexipage:availableForRecordHome,force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"  access="global"  >
+    <aura:attribute name="simpleNewContact" type="Contact" default="{'sObjectType':'Contact'}"/>
+    <aura:attribute name = "recordId" type="String"/>
+    <aura:attribute name ="contact" type="contact"/>
+    <aura:attribute name="flag" type="Boolean" default="False" />
+    
+  
+    <!-- Display the new contact form -->
+    <div class="Create Contact">
+        <lightning:card iconName="action:new_contact" title="Create Contact">
+            <div class="slds-p-horizontal--small">
+                <lightning:input  name ="contactField1" label="First Name" value="{!v.simpleNewContact.FirstName}" />
+                <lightning:input  name ="contactField2" label="Last Name" value="{!v.simpleNewContact.LastName}" />
+                <lightning:input name ="contactField3" label="Title" value="{!v.simpleNewContact.Title}"/>
+                <br/>
+                
+               <lightning:button variant="brand" label="create" title="create" onclick="{! c.handleClick }"/>
+               <lightning:button name="All contacts" label="All contacts" onclick="{!c.goToRecord}"/>
+                
+                <lightning:button name="show text" label="show text" onclick="{!c.show}"/>
+                <lightning:button name="hide text" label="hide text" onclick="{!c.hide}"/>
+                
+                <aura:if isTrue="{!v.flag}">
+                <p> My name is super hero </p>
+                </aura:if>
+
+                
+                
+                
+                
+                <aura:iteration var="a" items="{!v.contact}">
+                <lightning:card variant="Narrow" title="{!a.Name}" iconName="standard:contact">
+        
+           <aura:set attribute="footer">
+            <lightning:badge label="{!a.Email}"/>
+            </aura:set>
+        <p class="slds-p-horizontal_small"> {!a.Phone} </p>
+        <p class="slds-p-horizontal_small"> {!a.Name}</p>
+                    <p class="slds-p-horizontal_small"> {!a.Id}</p>
+                    <lightning:button name="delete" label="delete" onclick="{!c.deleterecord}"/>
+     </lightning:card>
+                </aura:iteration>
+                 </div>
+           
+               
+      
+                
+           
+        </lightning:card>
+    </div>
+
+    
+
+</aura:component>

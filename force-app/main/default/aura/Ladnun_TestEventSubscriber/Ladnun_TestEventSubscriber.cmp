@@ -1,0 +1,15 @@
+<aura:component >
+    <aura:attribute name = "capital" type="String" default = "New Delhi"/>
+    <aura:attribute name = "CountryName" type="string" default="India"/>
+    
+         <aura:handler event="c:Ladnun_TestApplicationEvent" action="{!c.handleevent}"/>
+
+    
+    <b>This component is a Subscriber</b><br/>
+    
+    The Capital of {!v.CountryName} is {!v.capital}
+    
+   
+    
+	
+</aura:component>
